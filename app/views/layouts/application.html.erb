@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>SocialMediaList</title>
+    <%= csrf_meta_tags %>
+
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+
+  </head>
+
+  <body>
+    <div class="header_bar">
+      <span class="main_title">Social Media Lists</span>
+      <div>
+        <%= link_to "Home", root_path, :style=>"color: white;font-size: 15px;font-weight: 700; margin-left:30px; text-decoration: none !important;"%>
+        <%= link_to "Legislators", legislator_list_path, :style=>"color: white;font-size: 15px;font-weight: 700; margin-left:10px; text-decoration: none !important;"%>
+        <%= link_to "Setting", client_list_path, :style=>"color: white;font-size: 15px;font-weight: 700; margin-left:10px; text-decoration: none !important;"%>
+      </div>
+    </div>
+    <div class="yield">
+      <%= yield %>
+    </div>
+  </body>
+</html>

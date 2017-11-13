@@ -1,0 +1,21 @@
+<!-- legislator post list view, list_customer.html.erb -->
+
+<p id="notice"><%= notice %></p>
+
+<div class="main_view">
+  <% @posts.each do |post| %>
+    <div class="post_box">
+      <div class="" style="font-size: 20px;color: blue;"> <%= post.customer_name %></div>
+      <hr>
+      <span style="font-weight: 700;color: blue;"><%= post.social %></span><br>
+      <div class="" > <%= post.customer_id %></div>
+      <div class="" > <%= post.posted_datetime %></div>
+      <div class="post_content">
+        <span >  <%= link_to post.link,post.link ,target: :_blank, style:"font-size: 15px;"%></span><br>
+        <span >  <%= post.post_content %>   </span>
+      </div>
+    </div>
+  <% end %>
+</div>
+
+<!-- legislator post list view, list_customer.html.erb -->

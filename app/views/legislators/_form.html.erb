@@ -1,0 +1,49 @@
+<!-- Legislator view, _form.html.erb -->
+<%= form_with(model: legislator, local: true) do |form| %>
+  <% if legislator.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(legislator.errors.count, "error") %> prohibited this legislator from being saved:</h2>
+
+      <ul>
+      <% legislator.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :first_name %>
+    <%= form.text_field :first_name, id: :legislator_first_name %>
+  </div>
+
+  <div class="field">
+    <%= form.label :last_name %>
+    <%= form.text_field :last_name, id: :legislator_last_name %>
+  </div>
+
+  <div class="field">
+    <%= form.label :facebook_id %>
+    <%= form.text_field :facebook_id, id: :legislator_facebook_id %>
+  </div>
+
+  <div class="field">
+    <%= form.label :twitter_id %>
+    <%= form.text_field :twitter_id, id: :legislator_twitter_id %>
+  </div>
+
+  <div class="field">
+    <%= form.label :other_id %>
+    <%= form.text_field :other_id, id: :legislator_other_id %>
+  </div>
+
+  <div class="field">
+    <%= form.label :detail %>
+    <%= form.text_area :detail, id: :legislator_detail %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>
+<!-- Legislator view, _form.html.erb -->

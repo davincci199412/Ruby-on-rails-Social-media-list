@@ -1,0 +1,41 @@
+<!-- Posts list view, list.html.erb -->
+
+<p id="notice"><%= notice %></p>
+<div class="search_bar">
+<%= form_tag post_list_path, method: "get" do %>
+      <%= "Social network: "%>
+      <%= select_tag "social", options_for_select(["all", "facebook", "twitter" ], "all")%>
+      <%= "Date Range: "%>
+      <%= "from"%>
+      <%= date_select("start_at", "date", :default => Date.today.at_beginning_of_year,
+                      :order => [:month,:day,:year], :start_year => Date.today.year,
+                      :end_year => Date.today.year - 10)%>
+
+      <%= "to"%>
+      <%= date_select("end_at", "date", :default => Date.today,
+                      :order => [:month,:day,:year], :start_year => Date.today.year,
+                      :end_year => Date.today.year - 10)%>
+
+      <%= submit_tag "Search", name: nil %>
+<% end %>
+</div>
+
+<div class="main_view">
+
+  <% @posts.each do |post| %>
+    <div class="post_box">
+      <div class="" style="font-size: 20px;color: blue;"> <%= post.customer_name %></div>
+      <hr>
+      <span style="font-weight: 700;color: blue;"><%= post.social %></span><br>
+      <div class="" > <%= post.customer_id %></div>
+      <div class="" > <%= post.posted_datetime %></div>
+      <div class="post_content">
+        <span >  <%= link_to post.link,post.link ,target: :_blank, style:"font-size: 15px;"%></span><br>
+        <span >  <%= post.post_content %>   </span>
+      </div>
+    </div>
+  <% end %>
+</div>
+
+<!-- Legislators list view, list.html.erb -->
+

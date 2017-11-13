@@ -1,0 +1,46 @@
+// Place all the styles related to the Legislators controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+/*
+// define style for page related customer
+// --------------------------------------
+// @author phonpanom
+// @description  define style for page related customer
+// @version  1.0
+//---------------------------------------
+// @last edit 11/04/2017
+// @by phonpanom
+*/
+
+.legislator_box{
+  width: 100%;
+  margin: 5px;
+  background-color: #fff;
+  border: solid 2px rgba(0,0,0,0.3);
+  border-radius: 10px;
+}
+.legislator_img{
+  display: inline-block;
+  background-color: #ccc;
+  width: 70px;
+  height: 70px;
+  border: solid 1px rgba(0,0,0,0.2);
+  margin: 5px;
+  padding: 5px;
+}
+.legislator_img_content{
+  width: 60px;
+  height: 60px;
+  background-color: #666666;
+}
+.legislator_data {
+  width: 85%;
+  padding: 5px;
+  float: right;
+}
+.legislator_detail{
+  display: inline-block;
+  margin: 5px;
+  padding-left: 50px;
+}

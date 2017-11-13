@@ -1,0 +1,62 @@
+<!-- Client view, list.html.erb -->
+<p id="notice"><%= notice %></p>
+
+<div class="search_bar">
+<%= form_tag client_list_path, :method => 'get' do %>
+    <p>
+      <%= text_field_tag :search, params[:search] %>
+      <%= submit_tag "Search", :name => nil %>
+    </p>
+<% end %>
+</div>
+
+<div class="main_view">
+  <h1 style="color: white">Clients List</h1>
+  <% @clients.each do |client| %>
+
+    <div class="legislator_box">
+      <div class="legislator_img" ><%=image_tag("user.png", style: "height:70px; width:70px;")%></div>
+      <div class="legislator_data">
+        <span style="font-size: 20px;color: blue;">
+          <%= client.first_name %>
+          <%= client.last_name %>
+        </span><br>
+        <span  style="font-size: 13px; font-weight: 600">
+          Email:
+          <%= client.email %><br>
+        </span><br>
+        <span style="font-size: 15px;">
+          <%= client.detail %>
+        </span>
+      </div>
+      <hr>
+      <span style="font-size: 15px;">Visible List</span><br>
+      <div class="legislator_detail">
+        <%= form_tag client_list_path, :method => 'post' do %>
+          <input id="client_<%=client.id %>" name="client" value="<%=client.id %>" type="hidden"/>
+          <% Legislator.all.each do |legislator| %>
+            <% @flag = "off"
+              client.legislators.each do |tmp_legistor|
+                if tmp_legistor == legislator
+                  @flag = "on"
+                end
+              end %>
+            <% if @flag == "off" %>
+              <input id="visible_<%=legislator.id %>" name="visible[]" value="<%=legislator.id %>"
+                     type= "checkbox" />
+            <% else %>
+              <input id="visible_<%=legislator.id %>" name="visible[]" value="<%=legislator.id %>"
+                     type= "checkbox"  checked = "checked" />
+            <% end %>
+            <%= legislator.first_name %>
+            <%= legislator.last_name %><br>
+          <% end %>
+          <%= submit_tag "Save", :name => nil %>
+        <% end %>
+      </div><!-- .legislator_detail -->
+
+    </div>
+  <% end %>
+</div>
+<!-- Client view, list.html.erb -->
+

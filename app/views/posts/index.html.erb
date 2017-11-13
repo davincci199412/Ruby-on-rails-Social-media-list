@@ -1,0 +1,34 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Posts</h1>
+
+<table>
+  <thead>
+  <tr>
+    <th>Social</th>
+    <th>name</th>
+    <th>id</th>
+    <th>Link</th>
+    <th>Posted datetime</th>
+    <th>Post content</th>
+    <th colspan="3"></th>
+  </tr>
+  </thead>
+
+  <tbody>
+  <% @posts.each do |post| %>
+      <tr>
+        <td><%= post.social %></td>
+        <td><%= post.customer_name %></td>
+        <td><%= post.customer_id %></td>
+        <td><%= post.link %></td>
+        <td><%= post.posted_datetime %></td>
+        <td><%= post.post_content %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Post', new_post_path %>

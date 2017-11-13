@@ -1,0 +1,34 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Social:</strong>
+  <%= @post.social %>
+</p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @post.customer_name %>
+</p>
+
+<p>
+  <strong>ID:</strong>
+  <%= @post.customer_id %>
+</p>
+
+<p>
+  <strong>Link:</strong>
+  <%= @post.link %>
+</p>
+
+<p>
+  <strong>Posted datetime:</strong>
+  <%= @post.posted_datetime %>
+</p>
+
+<p>
+  <strong>Post content:</strong>
+  <%= @post.post_content %>
+</p>
+
+<%= link_to 'Edit', edit_post_path(@post) %> |
+<%= link_to 'Back', posts_path %>

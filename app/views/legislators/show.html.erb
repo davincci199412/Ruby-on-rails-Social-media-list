@@ -1,0 +1,34 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>First name:</strong>
+  <%= @legislator.first_name %>
+</p>
+
+<p>
+  <strong>Last name:</strong>
+  <%= @legislator.last_name %>
+</p>
+
+<p>
+  <strong>Facebook:</strong>
+  <%= @legislator.facebook_id %>
+</p>
+
+<p>
+  <strong>Twitter:</strong>
+  <%= @legislator.twitter_id %>
+</p>
+
+<p>
+  <strong>Other:</strong>
+  <%= @legislator.other_id %>
+</p>
+
+<p>
+  <strong>Detail:</strong>
+  <%= @legislator.detail %>
+</p>
+
+<%= link_to 'Edit', edit_legislator_path(@legislator) %> |
+<%= link_to 'Back', legislators_path %>

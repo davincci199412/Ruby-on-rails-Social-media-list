@@ -1,0 +1,44 @@
+<!-- Legislators list view, list.html.erb -->
+
+<p id="notice"><%= notice %></p>
+
+<div class="search_bar">
+<%= form_tag legislator_list_path, :method => 'get' do %>
+    <p>
+      <%= text_field_tag :search, params[:search] %>
+      <%= submit_tag "Search", :name => nil %>
+    </p>
+<% end %>
+</div>
+
+<div class="main_view">
+  <h1 style="color: white">Fedral Legislators List</h1>
+<% @legislators.each do |legislator| %>
+  <div class="legislator_box">
+    <div class="legislator_img" ><%=image_tag("user.png", style: "height:70px; width:70px;")%></div>
+    <div class="legislator_data">
+      <span style="font-size: 20px;color: blue;">
+        <%= legislator.first_name %>
+        <%= legislator.last_name %>
+      </span><br>
+      <span  style="font-size: 13px; font-weight: 600">
+        facebook:
+        <%= legislator.facebook_id %><br>
+        twitter:
+        <%= legislator.twitter_id %>
+      </span><br>
+      <span  style="">
+        <%= link_to "View Posts",post_list_customer_path(:facebook_id=>legislator.facebook_id,:twitter_id=>legislator.twitter_id),
+                    style: "font-size: 13px; font-weight: 700; padding-top: 5px;" %>
+      </span><br>
+    </div>
+    <div class="legislator_detail">
+      <span style="font-size: 15px;">
+        <%= legislator.detail %>
+      </span>
+    </div>
+  </div>
+<% end %>
+</div>
+<!-- Legislators list view, list.html.erb -->
+
